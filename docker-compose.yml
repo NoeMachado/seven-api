@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+
+  # api:
+  #   build: .
+  #   container_name: my_api
+  #   restart: always
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     DATABASE_URL: "mysql://user:password@db:3306/mydb"
+  #     JWT_SECRET: "seusegredoaqui"
+  #     PORT: 3000
+  #   volumes:
+  #     - .:/app
+  #   command: ["yarn", "dev"]
+
+volumes:
+  mysql_data:
