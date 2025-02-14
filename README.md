@@ -1,6 +1,6 @@
 # 🏥 Seven API - Sistema de Pedidos e Produtos
 
-Seven API é uma API RESTful desenvolvida em **Node.js com Express** para gerenciar um sistema simples de **pedidos e produtos**. 
+Seven API é uma API RESTful desenvolvida em **Node.js com Express** para gerenciar um sistema de **usuários, pedidos e produtos**. 
 
 Ela inclui **CRUD de usuários, produtos e pedidos**, além de **autenticação JWT, validação de dados, testes automatizados e documentação com Swagger**.
 
